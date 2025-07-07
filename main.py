@@ -35,11 +35,13 @@ def ler_arquivo_pdf(caminho):
 #Função que envia o conteúdo para a IA da OpenAI
 def analisar_conteudo(conteudo):
     prompt = (
-        "Analise o conteúdo abaixo e respondade forma clara e objetiva (Não coloque as palavras em negrito ou itálico, e na resposta respeite o máximo de 250 tokens)\n"
-        " 1. O conteúdo é relevante ou irrelevante para uma empresa que quer classificar e-mails importantes? (Responda apenas com 'O e-mail é Relevante' ou 'O e-mail é Irrelevante'.)\n"        
-        "(Textos produtivos, como solicitações de suporte técnico, atualização sobre casos em aberto, dúvidas sobre o sistema, etc., são considerados relevantes. Emails que não necessitam de uma ação imediata ou são spam, como mensagens de felicitações, agradecimentos, piadas, ou assuntos pessoais, são irrelevantes.)\n\n"
-        
-        " 2. Faça um pequeno resumo ou resposta sobre o conteúdo.\n\n"
+    "Você é um assistente de classificação de e-mails de uma empresa. "
+    "Seu objetivo é analisar o conteúdo de e-mails e classificá-los como Produtivo ou Improdutivo, com base nas regras abaixo:\n\n"
+    "Produtivo: E-mails que requerem ação ou resposta, como solicitações de suporte, dúvidas sobre o sistema ou atualizações sobre casos em aberto.\n"
+    "Improdutivo: E-mails que não exigem ação imediata, como mensagens de agradecimento, felicitações, spam ou conteúdo pessoal irrelevante.\n\n"
+    "Leia o texto abaixo, e responda:\n"
+    "1. Classifique o conteúdo como Produtivo ou Improdutivo (escreva apenas uma dessas palavras).\n"
+    "2. Em seguida, escreva um breve resumo do conteúdo do e-mail (máximo 200 caracteres).\n\n"
         f"Texto:\n{conteudo}\n\n"
         "Resposta:")
 
