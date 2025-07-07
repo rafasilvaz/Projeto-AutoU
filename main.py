@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, redirect
 import os
 from openai import OpenAI
 import json
+import chardet
 
 #Configurar a chave da OpenAI
 client = OpenAI(
@@ -14,10 +15,17 @@ app.config['SECRET_KEY'] = "senha123"
 app.config['UPLOAD_FOLDER'] = "uploads"
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
-#Função para ler arquivos .txt
+#Função para ler arquivos .txt com detecção de endcoding
 def ler_arquivo_txt(caminho):
-    with open(caminho, 'r', encoding='utf-8') as f:
-        return f.read()
+    with open(caminho, 'rb') as f:
+        raw_data = f.read()
+        result = chardet.detect(raw_data)
+        encoding = result['encoding']
+
+    try:
+        return raw_data.decode(encoding)
+    except Exception as e:
+        return f"Erro ao decodificar o arquivo: {str(e)}"
 
 #Função para ler PDFs
 def ler_arquivo_pdf(caminho):
