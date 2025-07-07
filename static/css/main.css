@@ -46,8 +46,8 @@ div.conteudo-principal{
 
 /* Estilos para o formulário */
 #textbox{
-	min-height: 200px;
-  max-height: 500px;
+	height: 200px;
+  resize: none;
 }
 
 /* Mensagem de erro*/

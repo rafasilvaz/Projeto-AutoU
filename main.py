@@ -79,8 +79,6 @@ def results():
             conteudo = ler_arquivo_txt(filepath)
         elif file.filename.lower().endswith('.pdf'):
             conteudo = ler_arquivo_pdf(filepath)
-        else:
-            conteudo = f"O tipo de arquivo '{file.filename}' não é suportado para leitura automática."
 
     elif text and text.strip() != "":
         conteudo = text.strip()
