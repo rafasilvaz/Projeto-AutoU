@@ -20,7 +20,15 @@ E depois execute o script:
 
 Após a instalação do ambiente remoto é necessário que você tenha uma chave da OpenAI para a utilização da IA no projeto.
 
-Após a obtenção da chave da OpenAI, basta inseri-la na linha 9 onde está escrito "sua-chave-aqui" do arquivo "main.py".
+Após a obtenção da chave da OpenAI, basta abrir o arquivo .env e inserir o comando abaixo:
+
+OPENAI_API_KEY = "iserir sua chave AI aqui"
+
+Após isto, entre em main.py e abaixo das outras bibliotecas, insira este código para que o python carregue a biblioteca dotenv e realize a utilização da sua chave AI:
+
+from dotenv import load_dotenv
+
+load_dotenv(override=True)
 
 Realizando estas breves configurações, o código poderá ser rodado normalmente.
 
