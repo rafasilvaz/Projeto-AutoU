@@ -1,0 +1,56 @@
+/**
+ * Arquivo de estilo para a página principal e de resposta
+ */
+
+
+/* Declaração do charset */
+@charset "UTF-8";
+
+/* Reset CSS */
+
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variáveis CSS */
+:root{
+  --primary-color: #007bff;
+  --font-size: 16px;
+}
+
+
+/* Estilos para títulos */
+h1#title{
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  line-height: 4rem;
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+}
+
+header{
+	background-color: #1e293b;
+}
+
+/* Estilos para conteudo principal*/
+.container{
+	height: 85vh;
+}
+div.conteudo-principal{
+	max-width: 40rem;
+}
+
+/* Estilos para o formulário */
+#textbox{
+	min-height: 200px;
+  max-height: 500px;
+}
+
+/* Mensagem de erro*/
+#erro{
+	color: red;
+}
