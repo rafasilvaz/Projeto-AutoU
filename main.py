@@ -3,10 +3,6 @@ from flask import Flask, render_template, request, redirect
 import os
 from openai import OpenAI
 import json
-from dotenv import load_dotenv
-
-# Carrega as variáveis de ambiente do arquivo .env
-load_dotenv(override=True)
 
 #Configurar a chave da OpenAI
 client = OpenAI(
